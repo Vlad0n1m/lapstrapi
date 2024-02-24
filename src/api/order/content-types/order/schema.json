@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "client_name": {
+      "type": "string"
+    },
+    "final_price": {
+      "type": "integer"
+    },
+    "adress": {
+      "type": "string"
+    },
+    "date_ordered": {
+      "type": "datetime"
+    },
+    "payment_status": {
+      "type": "enumeration",
+      "enum": [
+        "Не оплачен",
+        "Оплачен",
+        "Отмена"
+      ]
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product"
+    }
+  }
+}
