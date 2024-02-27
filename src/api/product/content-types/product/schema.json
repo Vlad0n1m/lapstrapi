@@ -18,15 +18,6 @@
     "description": {
       "type": "text"
     },
-    "price": {
-      "type": "integer"
-    },
-    "date_created": {
-      "type": "datetime"
-    },
-    "date_updated": {
-      "type": "datetime"
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -41,6 +32,21 @@
     "slug": {
       "type": "uid",
       "targetField": "name"
+    },
+    "sirop_price": {
+      "type": "integer",
+      "required": true,
+      "default": 100
+    },
+    "small_price": {
+      "required": true,
+      "type": "integer"
+    },
+    "medium_price": {
+      "type": "integer"
+    },
+    "big_price": {
+      "type": "integer"
     }
   }
 }

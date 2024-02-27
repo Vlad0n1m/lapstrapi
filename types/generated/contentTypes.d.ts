@@ -875,11 +875,14 @@ export interface ApiProductProduct extends Schema.CollectionType {
   attributes: {
     name: Attribute.String;
     description: Attribute.Text;
-    price: Attribute.Integer;
-    date_created: Attribute.DateTime;
-    date_updated: Attribute.DateTime;
     image: Attribute.Media;
     slug: Attribute.UID<'api::product.product', 'name'>;
+    sirop_price: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<100>;
+    small_price: Attribute.Integer & Attribute.Required;
+    medium_price: Attribute.Integer;
+    big_price: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
